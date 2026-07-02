@@ -29,7 +29,7 @@ public class InventorySlotUI : MonoBehaviour
 
         Vector3 dropPosition = player.transform.position;
         dropPosition += player.transform.forward * 1.0f;
-        dropPosition.y += 0.2f;
+        dropPosition.y += 0.75f;
 
         Instantiate(currentItem.item.prefab, dropPosition, Quaternion.identity);
 
