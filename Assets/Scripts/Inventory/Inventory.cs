@@ -31,6 +31,21 @@ public class Inventory : MonoBehaviour
         PrintInventory();
     }
 
+    public void RemoveItem(Item item)
+    {
+        InventoryItem inventoryItem = items.Find(i => i.item == item);
+
+        if (inventoryItem == null)
+            return;
+
+        inventoryItem.quantity--;
+
+        if (inventoryItem.quantity <= 0)
+        {
+            items.Remove(inventoryItem);
+        }
+    }
+
     public void PrintInventory()
     {
         foreach (InventoryItem item in items)
