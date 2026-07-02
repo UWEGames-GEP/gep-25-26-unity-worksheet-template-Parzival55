@@ -25,12 +25,15 @@ public class InventorySlotUI : MonoBehaviour
 
     private void DropItem()
     {
-        Vector3 dropPosition = Camera.main.transform.position + Camera.main.transform.forward * 2f;
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+
+        Vector3 dropPosition = player.transform.position;
+        dropPosition += player.transform.forward * 1.0f;
+        dropPosition.y += 0.2f;
 
         Instantiate(currentItem.item.prefab, dropPosition, Quaternion.identity);
 
         Inventory.Instance.RemoveItem(currentItem.item);
-
         InventoryUI.Instance.RefreshInventory();
     }
 }

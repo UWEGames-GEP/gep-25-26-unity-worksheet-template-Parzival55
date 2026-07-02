@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 7601609759358343122}
   - component: {fileID: 3280164360981143923}
   - component: {fileID: 7995736676753954543}
-  - component: {fileID: -3726323949046747680}
+  - component: {fileID: 3331591945339458610}
   m_Layer: 0
-  m_Name: ApplePrefab
+  m_Name: StonePrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3313115047488707955}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &7601609759358343122
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -67,7 +67,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 568c8b011bb6aa741b5ef3183960e2fb, type: 2}
+  - {fileID: 2100000, guid: d80fa3c305490a3418197c8c047d4cdb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -122,8 +122,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f27f02efb8f02745840d36a5d1350f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: bcb7b4f4f4596144b82d14ac62f33030, type: 2}
---- !u!114 &-3726323949046747680
+  item: {fileID: 11400000, guid: c625eb7d2cf6fca4e8c509640d663baf, type: 2}
+--- !u!114 &3331591945339458610
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
