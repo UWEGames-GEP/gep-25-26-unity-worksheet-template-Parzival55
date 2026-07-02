@@ -1,13 +1,19 @@
-using TMPro;
 using UnityEngine;
 
 public class InventoryUI : MonoBehaviour
 {
+    public static InventoryUI Instance { get; private set; }
+
     [SerializeField] private GameObject inventoryPanel;
     [SerializeField] private Transform content;
-    [SerializeField] private GameObject itemPrefab;
+    [SerializeField] private InventorySlotUI itemPrefab;
 
     private bool isOpen;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void Update()
     {
@@ -34,7 +40,7 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
-    private void RefreshInventory()
+    public void RefreshInventory()
     {
         foreach (Transform child in content)
         {
@@ -43,11 +49,10 @@ public class InventoryUI : MonoBehaviour
 
         foreach (InventoryItem item in Inventory.Instance.items)
         {
-            GameObject uiItem = Instantiate(itemPrefab, content);
+            Debug.Log($"Creating slot for {item.item.itemName}");
 
-            TMP_Text text = uiItem.GetComponent<TMP_Text>();
-
-            text.text = $"{item.item.itemName} x{item.quantity}";
+            InventorySlotUI slot = Instantiate(itemPrefab, content);
+            slot.Setup(item);
         }
     }
 }
