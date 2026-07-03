@@ -15,3 +15,7 @@ MonoBehaviour:
   itemName: Sword
   icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   prefab: {fileID: 3313115047488707955, guid: 278ff203d901189458f6cbb9725bd4f0, type: 3}
+  description: A sharp blade
+  value: 100
+  weight: 4
+  rarity: 2

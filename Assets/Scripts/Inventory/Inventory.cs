@@ -53,4 +53,24 @@ public class Inventory : MonoBehaviour
             Debug.Log($"{item.item.itemName} x{item.quantity}");
         }
     }
+
+    public void SortItemsAlphabetically()
+    {
+        Debug.Log("===== BEFORE SORT =====");
+
+        foreach (InventoryItem item in items)
+        {
+            Debug.Log(item.item.itemName);
+        }
+
+        items.Sort((a, b) => a.item.itemName.CompareTo(b.item.itemName));
+
+        Debug.Log("===== AFTER SORT =====");
+
+        foreach (InventoryItem item in items)
+        {
+            Debug.Log(item.item.itemName);
+        }
+    }
+
 }

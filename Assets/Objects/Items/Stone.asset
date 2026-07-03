@@ -15,3 +15,7 @@ MonoBehaviour:
   itemName: Stone
   icon: {fileID: 0}
   prefab: {fileID: 3313115047488707955, guid: c4f014c3793d351489d8f39ce8fd6837, type: 3}
+  description: a heavy rock
+  value: 3
+  weight: 2
+  rarity: 0

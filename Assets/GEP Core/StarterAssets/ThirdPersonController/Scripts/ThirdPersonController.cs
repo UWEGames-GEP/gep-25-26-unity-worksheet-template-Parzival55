@@ -156,6 +156,11 @@ namespace StarterAssets
         {
             _hasAnimator = TryGetComponent(out _animator);
 
+            if (GameManager.Instance.CurrentState == GameState.InventoryOpen)
+            {
+                return;
+            }
+
             JumpAndGravity();
             GroundedCheck();
             Move();
@@ -163,6 +168,11 @@ namespace StarterAssets
 
         private void LateUpdate()
         {
+            if (GameManager.Instance.CurrentState == GameState.InventoryOpen)
+            {
+                return;
+            }
+
             CameraRotation();
         }
 

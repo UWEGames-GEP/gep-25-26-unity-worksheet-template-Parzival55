@@ -1,8 +1,9 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class InventorySlotUI : MonoBehaviour
+public class InventorySlotUI : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private Image icon;
     [SerializeField] private TMP_Text itemName;
@@ -10,6 +11,7 @@ public class InventorySlotUI : MonoBehaviour
     [SerializeField] private Button dropButton;
 
     private InventoryItem currentItem;
+    
 
     public void Setup(InventoryItem inventoryItem)
     {
@@ -35,5 +37,10 @@ public class InventorySlotUI : MonoBehaviour
 
         Inventory.Instance.RemoveItem(currentItem.item);
         InventoryUI.Instance.RefreshInventory();
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        ItemDetailsUI.Instance.ShowItem(currentItem.item);
     }
 }
