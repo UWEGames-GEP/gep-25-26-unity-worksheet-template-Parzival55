@@ -11,14 +11,15 @@ public class ItemPickup : MonoBehaviour
     {
         if (playerInRange && Input.GetKeyDown(KeyCode.E))
         {
-            Inventory.Instance.AddItem(item);
-
-            if (pickupSound != null)
+            if (Inventory.Instance.AddItem(item))
             {
-                AudioSource.PlayClipAtPoint(pickupSound, transform.position);
-            }
+                if (pickupSound != null)
+                {
+                    AudioSource.PlayClipAtPoint(pickupSound, transform.position);
+                }
 
-            Destroy(gameObject);
+                Destroy(gameObject);
+            }
         }
     }
 

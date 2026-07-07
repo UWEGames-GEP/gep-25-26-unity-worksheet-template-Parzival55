@@ -17,5 +17,5 @@ MonoBehaviour:
   prefab: {fileID: 3313115047488707955, guid: ca7b25a7e046799489849e29e122e4dc, type: 3}
   description: A piece of timber
   value: 2
-  weight: 1.5
+  weight: 10
   rarity: 0

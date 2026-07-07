@@ -34,7 +34,18 @@ public class InventorySlotUI : MonoBehaviour, IPointerClickHandler
         dropPosition += player.transform.forward * 1.0f;
         dropPosition.y += 0.75f;
 
-        Instantiate(currentItem.item.prefab, dropPosition, Quaternion.identity);
+        //Instantiate(currentItem.item.prefab, dropPosition, currentItem.item.prefab.transform.rotation); - Fix from item prebad spawning rotations
+
+        GameObject droppedItem = Instantiate(
+        currentItem.item.prefab,
+        dropPosition,
+        Quaternion.identity
+        );
+
+        if (currentItem.item.itemName == "Wood")
+        {
+            droppedItem.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
+        }
 
         if (dropSound != null)
         {

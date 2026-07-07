@@ -12,6 +12,9 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] private Button sortButton;
     [SerializeField] private TMP_Text totalWeightText;
     [SerializeField] private TMP_Text itemCountText;
+    [SerializeField] private TMP_Text inventoryFullText;
+    [SerializeField] private TMP_Text inventoryTooHeavyText;
+    [SerializeField] private TMP_Text slotsText;
 
     private bool isOpen;
 
@@ -70,6 +73,7 @@ public class InventoryUI : MonoBehaviour
 
         UpdateTotalWeight();
         UpdateItemCount();
+        UpdateSlotCount();
 
         if (Inventory.Instance.items.Count == 0)
         {
@@ -109,5 +113,34 @@ public class InventoryUI : MonoBehaviour
         }
 
         itemCountText.text = $"Items: {totalItems}";
+    }
+
+    private void UpdateSlotCount()
+    {
+        slotsText.text = $"Slots: {Inventory.Instance.GetCurrentSlots()} / {Inventory.Instance.GetMaxSlots()}";
+    }
+
+    public void ShowInventoryFull()
+    {
+        inventoryFullText.gameObject.SetActive(true);
+        CancelInvoke(nameof(HideInventoryFull));
+        Invoke(nameof(HideInventoryFull), 2f);
+    }
+
+    private void HideInventoryFull()
+    {
+        inventoryFullText.gameObject.SetActive(false);
+    }
+
+    public void ShowInventoryTooHeavy()
+    {
+        inventoryTooHeavyText.gameObject.SetActive(true);
+        CancelInvoke(nameof(HideInventoryTooHeavy));
+        Invoke(nameof(HideInventoryTooHeavy), 2f);
+    }
+
+    private void HideInventoryTooHeavy()
+    {
+        inventoryTooHeavyText.gameObject.SetActive(false);
     }
 }
