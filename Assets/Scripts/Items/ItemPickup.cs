@@ -3,6 +3,7 @@ using UnityEngine;
 public class ItemPickup : MonoBehaviour
 {
     [SerializeField] private Item item;
+    [SerializeField] private AudioClip pickupSound;
 
     private bool playerInRange;
 
@@ -11,6 +12,12 @@ public class ItemPickup : MonoBehaviour
         if (playerInRange && Input.GetKeyDown(KeyCode.E))
         {
             Inventory.Instance.AddItem(item);
+
+            if (pickupSound != null)
+            {
+                AudioSource.PlayClipAtPoint(pickupSound, transform.position);
+            }
+
             Destroy(gameObject);
         }
     }

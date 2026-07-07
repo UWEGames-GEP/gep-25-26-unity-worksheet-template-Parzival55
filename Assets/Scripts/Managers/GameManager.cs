@@ -29,5 +29,23 @@ public class GameManager : MonoBehaviour
     public void SetState(GameState newState)
     {
         CurrentState = newState;
+
+        switch (CurrentState)
+        {
+            case GameState.Playing:
+                Debug.Log("Game State: Playing");
+                Time.timeScale = 1f;
+                break;
+
+            case GameState.InventoryOpen:
+                Debug.Log("Game State: Inventory Open");
+                Time.timeScale = 1f;
+                break;
+
+            case GameState.Paused:
+                Debug.Log("Game State: Paused");
+                Time.timeScale = 0f;
+                break;
+        }
     }
 }

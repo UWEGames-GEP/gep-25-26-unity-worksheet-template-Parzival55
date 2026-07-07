@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Apple
   m_EditorClassIdentifier: 
   itemName: Apple
-  icon: {fileID: 21300000, guid: b74c31d447d2f5d41a61081bdf5e7126, type: 3}
+  icon: {fileID: 21300000, guid: deba3ad1aaca5dd4da63784043f465c7, type: 3}
   prefab: {fileID: 3313115047488707955, guid: da51b2065ad96f344b1531b784fff668, type: 3}
   description: A red apple
   value: 5

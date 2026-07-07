@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: db3237345caf9254195e0ed3c3edbe29, type: 2}
+  pickupSound: {fileID: 8300000, guid: 202a888f4a4b05945b42a6f5370ada24, type: 3}
 --- !u!114 &691929909966493839
 MonoBehaviour:
   m_ObjectHideFlags: 0

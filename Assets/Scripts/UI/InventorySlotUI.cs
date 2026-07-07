@@ -10,8 +10,9 @@ public class InventorySlotUI : MonoBehaviour, IPointerClickHandler
     [SerializeField] private TMP_Text quantity;
     [SerializeField] private Button dropButton;
 
+    [SerializeField] private AudioClip dropSound;
+
     private InventoryItem currentItem;
-    
 
     public void Setup(InventoryItem inventoryItem)
     {
@@ -34,6 +35,11 @@ public class InventorySlotUI : MonoBehaviour, IPointerClickHandler
         dropPosition.y += 0.75f;
 
         Instantiate(currentItem.item.prefab, dropPosition, Quaternion.identity);
+
+        if (dropSound != null)
+        {
+            AudioSource.PlayClipAtPoint(dropSound, dropPosition);
+        }
 
         Inventory.Instance.RemoveItem(currentItem.item);
         InventoryUI.Instance.RefreshInventory();
